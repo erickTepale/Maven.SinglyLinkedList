@@ -30,7 +30,7 @@ public class SinglyLinkedList<T> {
     public void remove(Integer index){
         Node current = head;
         Integer counter =0;
-        while(current.getNext() != null) {
+        while(current != null) {
             if(index.equals(0)){
                 head = current.getNext();
                 size -= 1;
@@ -51,7 +51,7 @@ public class SinglyLinkedList<T> {
 
     public Boolean contains(T data){
         Node current = head;
-        while(current.getNext() != null){
+        while(current != null){
             if(current.getData().equals(data)) {
                 return true;
             }
@@ -59,6 +59,19 @@ public class SinglyLinkedList<T> {
             current= (current.getNext());
         }
         return false;
+    }
+
+    public Integer find(T data){
+        Node current = head;
+        Integer counter = 0;
+        while(current != null){
+            if(current.getData().equals(data)) {
+                return counter;
+            }
+            counter++;
+            current= (current.getNext());
+        }
+        return -1;
     }
 
     public Node get(Integer index){
@@ -70,6 +83,7 @@ public class SinglyLinkedList<T> {
         }
         return null;
     }
+
 
     public Integer length(){
         return size;

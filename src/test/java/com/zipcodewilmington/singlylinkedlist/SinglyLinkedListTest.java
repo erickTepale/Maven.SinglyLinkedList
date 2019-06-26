@@ -95,4 +95,50 @@ public class SinglyLinkedListTest {
         System.out.println(list);
         Assert.assertTrue(list.contains("sec"));
     }
+
+    @Test
+    public void testContains2(){
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>("first");
+        list.add("sec");
+        list.add("third");
+        list.add("four");
+        list.add("five");
+
+        System.out.println(list);
+        Assert.assertFalse(list.contains("blah"));
+    }
+
+    @Test
+    public void testFind1(){
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>("first");
+        list.add("sec");
+        list.add("third");
+        list.add("four");
+        list.add("five");
+
+        System.out.println(list);
+        Assert.assertEquals(Integer.valueOf(1), list.find("sec"));
+    }
+    @Test
+    public void testFind2(){
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>("first");
+        list.add("sec");
+        list.add("third");
+        list.add("four");
+        list.add("five");
+
+        System.out.println(list);
+        Assert.assertEquals(Integer.valueOf(0), list.find("first"));
+    }
+    @Test
+    public void testFind3(){
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>("first");
+        list.add("sec");
+        list.add("third");
+        list.add("four");
+        list.add("five");
+
+        System.out.println(list);
+        Assert.assertEquals(Integer.valueOf(4), list.find("five"));
+    }
 }
