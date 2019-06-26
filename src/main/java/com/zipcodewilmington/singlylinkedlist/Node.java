@@ -1,6 +1,8 @@
 package com.zipcodewilmington.singlylinkedlist;
 
-public class Node<T> {
+import java.util.Objects;
+
+public class Node<T>{
     private T data;
     private Node next;
 
@@ -27,5 +29,18 @@ public class Node<T> {
                 "data=" + data +
                 ", next=" + next +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Node)) return false;
+        Node<?> node = (Node<?>) o;
+        return Objects.equals(data, node.data);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(data);
     }
 }

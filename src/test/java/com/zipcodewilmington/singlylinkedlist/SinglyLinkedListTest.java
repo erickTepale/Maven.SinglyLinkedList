@@ -52,10 +52,47 @@ public class SinglyLinkedListTest {
     public void testRemove(){
         SinglyLinkedList<String> list = new SinglyLinkedList<String>("first");
         list.add("bleh");
-        list.add("blah");
-        list.add("blehsd");
 
-        list.remove(1);
+        list.remove(0);
+        System.out.println(list);
         Assert.assertEquals(Integer.valueOf(1), list.length());
+    }
+
+    @Test
+    public void testRemove2(){
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>("first");
+        list.add("sec");
+        list.add("third");
+        list.add("four");
+        list.add("five");
+
+        list.remove(2);
+        System.out.println(list);
+        Assert.assertEquals(Integer.valueOf(4), list.length());
+    }
+
+    @Test
+    public void testRemove3(){
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>("first");
+        list.add("sec");
+        list.add("third");
+        list.add("four");
+        list.add("five");
+
+        list.remove(list.length() - 1);
+        System.out.println(list);
+        Assert.assertEquals(Integer.valueOf(4), list.length());
+    }
+
+    @Test
+    public void testContains(){
+        SinglyLinkedList<String> list = new SinglyLinkedList<String>("first");
+        list.add("sec");
+        list.add("third");
+        list.add("four");
+        list.add("five");
+
+        System.out.println(list);
+        Assert.assertTrue(list.contains("sec"));
     }
 }
